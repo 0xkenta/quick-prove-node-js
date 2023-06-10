@@ -16,6 +16,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
     await newUser.save();
     res.status(201).json(newUser);
   } catch (err) {
+    console.log("test")
     errorHandler(res, next, 400, err);
   }
 };
