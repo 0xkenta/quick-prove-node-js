@@ -4,6 +4,7 @@ import { errorHandler, isValidHttpURL } from './utils';
 import Token, { IToken } from '../models/token';
 
 const getAllTokens = async (req: Request, res: Response) => {
+    console.log('');
     const tokens = await Token.find({}).sort('symbol').exec();
     res.status(200).send({ tokens });
 };
