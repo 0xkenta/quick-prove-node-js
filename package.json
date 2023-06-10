@@ -9,7 +9,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    ".ts": [
+    "*.ts": [
       "prettier --write",
       "eslint --cache --fix"
     ]
