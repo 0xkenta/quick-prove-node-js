@@ -18,6 +18,7 @@ const isValidHttpURL = (url: string) => {
 
 const isInWatchlist = (watchlist: Schema.Types.ObjectId[], newId: Schema.Types.ObjectId): boolean => {
   return watchlist.includes(newId);
+  console.log("test")
 };
 
 export { errorHandler, isValidHttpURL, isInWatchlist };
