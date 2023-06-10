@@ -11,7 +11,7 @@
     },
     "lint-staged": {
         "*.ts": [
-            "eslint --fix",
+            "eslint .",
             "prettier --write ."
         ]
     },
