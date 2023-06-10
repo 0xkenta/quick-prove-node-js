@@ -2,8 +2,9 @@ import express, { Express, Request, Response } from 'express';
 import { connect } from 'mongoose';
 import dotenv from 'dotenv';
 
-import chainsRouter from "./routes/chains";
-import tokensRouter from "./routes/tokens";
+import chainsRouter from './routes/chains';
+import tokensRouter from './routes/tokens';
+import usersRouter from './routes/users';
 
 dotenv.config();
 
@@ -15,9 +16,10 @@ connect(mongoDB);
 
 app.use(express.json());
 
-app.use("/chains", chainsRouter);
-app.use("/tokens", tokensRouter);
+app.use('/chains', chainsRouter);
+app.use('/tokens', tokensRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => {
-    console.log(`server is running at http://localhost:${port}`)
+  console.log(`server is running at http://localhost:${port}`);
 });
