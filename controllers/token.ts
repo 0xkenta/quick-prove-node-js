@@ -28,7 +28,7 @@ const addNewToken = async (req: Request, res: Response, next: NextFunction) => {
             await newToken.save();
             res.status(201).json(newToken);
         } catch (err) {
-            errorHandler(res, next, 400, err.message);
+            errorHandler(res, next, 400, (err as Error).message);
         }
     } else {
         errorHandler(res, next, 400, 'INVALID PRICE URL');

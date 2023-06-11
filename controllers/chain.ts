@@ -37,7 +37,7 @@ const addNewChain = async (req: Request, res: Response, next: NextFunction) => {
         await newChain.save();
         res.status(201).json(newChain);
     } catch (err) {
-        errorHandler(res, next, 400, err.message);
+        errorHandler(res, next, 400, (err as Error).message);
     }
 };
 

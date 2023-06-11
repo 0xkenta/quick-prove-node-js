@@ -6,13 +6,14 @@
     "scripts": {
         "build": "npx tsc",
         "start": "node dist/app.js",
-        "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+        "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\"",
+        "eslint": "eslint .",
         "prepare": "husky install"
     },
     "lint-staged": {
         "*.ts": [
-            "eslint .",
-            "prettier --write ."
+            "prettier --write .",
+            "eslint"
         ]
     },
     "devDependencies": {
